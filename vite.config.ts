@@ -5,4 +5,5 @@ import biomePlugin from "vite-plugin-biome";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react(), biomePlugin()],
+	base: "/noita-bingo-sheet/",
 });
