@@ -1,5 +1,4 @@
 import { Stack, TextField } from "@mui/material";
-import { useState } from "react";
 
 interface Props {
   setNumbers: React.Dispatch<React.SetStateAction<number[]>>; // 正しい型を指定
@@ -35,4 +34,4 @@ const Inputs: React.FC<Props> = ({ setNumbers, setSeed }) => {
   );
 };
 
-export default InputOwnNumbers;
+export default Inputs;
