@@ -1,13 +1,14 @@
-import { Stack, TextField } from "@mui/material";
+import { Box, Checkbox, Stack, TextField } from "@mui/material";
 
 interface Props {
-  setNumbers: React.Dispatch<React.SetStateAction<number[]>>; // 正しい型を指定
+  setNumbers: React.Dispatch<React.SetStateAction<number[]>>;
   setSeed: React.Dispatch<React.SetStateAction<string | number>>;
+  setIsShowText: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Inputs: React.FC<Props> = ({ setNumbers, setSeed }) => {
+const Inputs: React.FC<Props> = ({ setNumbers, setSeed, setIsShowText }) => {
   return (
-    <>
+    <Box sx={{ mt: 4 }}>
       <Stack direction="row" spacing={2}>
         <TextField
           id="outlined-basic"
@@ -29,8 +30,17 @@ const Inputs: React.FC<Props> = ({ setNumbers, setSeed }) => {
             setSeed(e.target.value);
           }}
         />
+        <span>
+          <Checkbox
+            defaultChecked={false}
+            onChange={(e, isChecked) => {
+              setIsShowText(isChecked);
+            }}
+          />
+          ビンゴにテキストを追加表示する
+        </span>
       </Stack>
-    </>
+    </Box>
   );
 };
 

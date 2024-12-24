@@ -1,9 +1,9 @@
-import { easyTasks } from "./constants/tasks/easy-task";
-import { hardTasks } from "./constants/tasks/hard-task";
-import { mustPerkTasks, mustSpellTasks } from "./constants/tasks/must-task";
-import { normalTasks } from "./constants/tasks/normal-task";
+import { easyTasks } from "../constants/tasks/easy-task";
+import { hardTasks } from "../constants/tasks/hard-task";
+import { mustPerkTasks, mustSpellTasks } from "../constants/tasks/must-task";
+import { normalTasks } from "../constants/tasks/normal-task";
 import Chance from "chance";
-import type { Task } from "./interfaces/task";
+import type { Task } from "../interfaces/task";
 
 function selectRandomItemsFromArray<T>(
 	amount: number,
@@ -89,5 +89,11 @@ export function createBingo(
 		...selectRandomItemsFromArray(taskCount.hard, hardTasks, chance),
 	);
 
-	return chance.shuffle(bingoTasks);
+	const map = new Map<number, string>();
+
+	for (const [index, text] of chance.shuffle(bingoTasks).entries()) {
+		map.set(index + 1, text);
+	}
+
+	return map;
 }

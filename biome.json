@@ -6,8 +6,9 @@
     "useIgnoreFile": false
   },
   "files": {
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
     "ignoreUnknown": false,
-    "ignore": ["tsconfig*"]
+    "ignore": ["tsconfig*", "dist/*"]
   },
   "formatter": {
     "enabled": true,

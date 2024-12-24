@@ -5,25 +5,12 @@
   text-align: left;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.backgroundImage {
+  background-image: url("assets/bg2.jpg");
+  background-size: auto;
+  background-repeat: repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.backgroundCover {
+  background-color: rgba(255, 255, 255, 0.7);
 }
