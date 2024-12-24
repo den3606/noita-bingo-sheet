@@ -10,7 +10,7 @@ function App() {
   const [seed, setSeed] = useState<string | number>("");
   const [isShowText, setIsShowText] = useState(false);
   const [bingoContents, setBingoContents] = useState<Map<number, string>>(
-    createBingo(seed)
+    createBingo(seed),
   );
 
   useEffect(() => {

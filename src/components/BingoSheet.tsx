@@ -63,14 +63,14 @@ const generateBingoNumberStrings = (): (number | "FREE")[][] => {
   ];
 
   const shuffledColumns = columns.map((col) =>
-    [...col].sort(() => Math.random() - 0.5).slice(0, 5)
+    [...col].sort(() => Math.random() - 0.5).slice(0, 5),
   );
 
   const grid = Array.from({ length: 5 }, (_, rowIndex) =>
     Array.from({ length: 5 }, (_, colIndex) => {
       if (rowIndex === 2 && colIndex === 2) return "FREE";
       return shuffledColumns[colIndex][rowIndex];
-    })
+    }),
   );
 
   return grid;
@@ -84,13 +84,13 @@ interface Props {
 const BingoSheet: React.FC<Props> = ({ bingoContents, isShowText }) => {
   const [bingoNumberStrings, _] = useState(generateBingoNumberStrings());
   const [selectedCells, setSelectedCells] = useState(
-    Array.from({ length: 5 }, () => Array(5).fill(false))
+    Array.from({ length: 5 }, () => Array(5).fill(false)),
   );
 
   const handleCellClick = (row: number, col: number) => {
     setSelectedCells((prev) => {
       const newSelected = prev.map((r, rIdx) =>
-        r.map((c, cIdx) => (rIdx === row && cIdx === col ? !c : c))
+        r.map((c, cIdx) => (rIdx === row && cIdx === col ? !c : c)),
       );
       return newSelected;
     });
@@ -137,7 +137,7 @@ const BingoSheet: React.FC<Props> = ({ bingoContents, isShowText }) => {
                 cellNumber={cellNumber}
               />
             </BingoCell>
-          ))
+          )),
         )}
       </Box>
     </Box>

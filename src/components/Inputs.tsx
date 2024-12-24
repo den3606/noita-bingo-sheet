@@ -19,7 +19,7 @@ const Inputs: React.FC<Props> = ({ setNumbers, setSeed, setIsShowText }) => {
               e.target.value
                 .split(",")
                 .map(Number)
-                .filter((item) => item > 0)
+                .filter((item) => item > 0),
             );
           }}
         />
