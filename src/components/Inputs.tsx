@@ -33,7 +33,7 @@ const Inputs: React.FC<Props> = ({ setNumbers, setSeed, setIsShowText }) => {
         <span>
           <Checkbox
             defaultChecked={false}
-            onChange={(e, isChecked) => {
+            onChange={(_, isChecked) => {
               setIsShowText(isChecked);
             }}
           />

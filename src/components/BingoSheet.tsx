@@ -53,7 +53,7 @@ const CellContent: React.FC<{
 };
 
 // ランダムなビンゴ用データを生成
-const generateBingoNumberStrings = (): (string | "FREE")[][] => {
+const generateBingoNumberStrings = (): (number | "FREE")[][] => {
   const columns = [
     Array.from({ length: 15 }, (_, i) => i + 1), // B列
     Array.from({ length: 15 }, (_, i) => i + 16), // I列
@@ -82,9 +82,7 @@ interface Props {
 }
 
 const BingoSheet: React.FC<Props> = ({ bingoContents, isShowText }) => {
-  const [bingoNumberStrings, setBingoNumberStrings] = useState(
-    generateBingoNumberStrings()
-  );
+  const [bingoNumberStrings, _] = useState(generateBingoNumberStrings());
   const [selectedCells, setSelectedCells] = useState(
     Array.from({ length: 5 }, () => Array(5).fill(false))
   );

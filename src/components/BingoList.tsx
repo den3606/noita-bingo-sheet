@@ -1,4 +1,4 @@
-import { Box, Checkbox, FormControlLabel, List, ListItem } from "@mui/material";
+import { Checkbox, FormControlLabel, List, ListItem } from "@mui/material";
 
 interface Props {
   numbers: number[];
